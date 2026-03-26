@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AttendSync | Documentation</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Epilogue:wght@700&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "rgb(var(--co-outline-variant) / <alpha-value>)",
+              "surface-tint": "rgb(var(--co-surface-tint) / <alpha-value>)",
+              "on-surface-variant": "rgb(var(--co-on-surface-variant) / <alpha-value>)",
+              error: "rgb(var(--co-error) / <alpha-value>)",
+              "inverse-primary": "rgb(var(--co-inverse-primary) / <alpha-value>)",
+              "error-container": "rgb(var(--co-error-container) / <alpha-value>)",
+              "on-tertiary-container": "rgb(var(--co-on-tertiary-container) / <alpha-value>)",
+              background: "rgb(var(--co-background) / <alpha-value>)",
+              "on-primary": "rgb(var(--co-on-primary) / <alpha-value>)",
+              outline: "rgb(var(--co-outline) / <alpha-value>)",
+              "tertiary-fixed-dim": "rgb(var(--co-tertiary-fixed-dim) / <alpha-value>)",
+              "on-error": "rgb(var(--co-on-error) / <alpha-value>)",
+              tertiary: "rgb(var(--co-tertiary) / <alpha-value>)",
+              secondary: "rgb(var(--co-secondary) / <alpha-value>)",
+              "on-tertiary": "rgb(var(--co-on-tertiary) / <alpha-value>)",
+              "surface-container-low": "rgb(var(--co-surface-container-low) / <alpha-value>)",
+              "surface-container": "rgb(var(--co-surface-container) / <alpha-value>)",
+              "primary-fixed": "rgb(var(--co-primary-fixed) / <alpha-value>)",
+              "secondary-fixed": "rgb(var(--co-secondary-fixed) / <alpha-value>)",
+              "surface-container-highest": "rgb(var(--co-surface-container-highest) / <alpha-value>)",
+              "primary-container": "rgb(var(--co-primary-container) / <alpha-value>)",
+              "on-primary-fixed-variant": "rgb(var(--co-on-primary-fixed-variant) / <alpha-value>)",
+              "surface-container-high": "rgb(var(--co-surface-container-high) / <alpha-value>)",
+              "on-primary-container": "rgb(var(--co-on-primary-container) / <alpha-value>)",
+              "on-secondary-container": "rgb(var(--co-on-secondary-container) / <alpha-value>)",
+              "secondary-container": "rgb(var(--co-secondary-container) / <alpha-value>)",
+              "surface-container-lowest": "rgb(var(--co-surface-container-lowest) / <alpha-value>)",
+              "inverse-surface": "rgb(var(--co-inverse-surface) / <alpha-value>)",
+              "on-tertiary-fixed": "rgb(var(--co-on-tertiary-fixed) / <alpha-value>)",
+              surface: "rgb(var(--co-surface) / <alpha-value>)",
+              "primary-fixed-dim": "rgb(var(--co-primary-fixed-dim) / <alpha-value>)",
+              "on-secondary": "rgb(var(--co-on-secondary) / <alpha-value>)",
+              "surface-bright": "rgb(var(--co-surface-bright) / <alpha-value>)",
+              "on-surface": "rgb(var(--co-on-surface) / <alpha-value>)",
+              "secondary-fixed-dim": "rgb(var(--co-secondary-fixed-dim) / <alpha-value>)",
+              "on-secondary-fixed-variant": "rgb(var(--co-on-secondary-fixed-variant) / <alpha-value>)",
+              "on-secondary-fixed": "rgb(var(--co-on-secondary-fixed) / <alpha-value>)",
+              "surface-variant": "rgb(var(--co-surface-variant) / <alpha-value>)",
+              "on-primary-fixed": "rgb(var(--co-on-primary-fixed) / <alpha-value>)",
+              "tertiary-fixed": "rgb(var(--co-tertiary-fixed) / <alpha-value>)",
+              "inverse-on-surface": "rgb(var(--co-inverse-on-surface) / <alpha-value>)",
+              "on-background": "rgb(var(--co-on-background) / <alpha-value>)",
+              "surface-dim": "rgb(var(--co-surface-dim) / <alpha-value>)",
+              primary: "rgb(var(--co-primary) / <alpha-value>)",
+              "on-tertiary-fixed-variant": "rgb(var(--co-on-tertiary-fixed-variant) / <alpha-value>)",
+              "tertiary-container": "rgb(var(--co-tertiary-container) / <alpha-value>)",
+              "on-error-container": "rgb(var(--co-on-error-container) / <alpha-value>)",
+            },
+            fontFamily: {
+              headline: ["Epilogue"],
+              body: ["Plus Jakarta Sans"],
+              label: ["Space Grotesk"],
+              editorial: ["Bricolage Grotesque"],
+              mono: ["JetBrains Mono"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed transition-colors duration-300">
+    <div class="fixed inset-0 -z-10 mesh-bg opacity-40"></div>
+    <div class="fixed inset-0 -z-10 dot-grid opacity-[0.08]"></div>
+
+    <header class="sticky top-0 z-50 bg-[#fcf9f3]/70 backdrop-blur-md shadow-[0_0_32px_rgba(13,13,20,0.04)]">
+      <div class="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-[1440px] mx-auto">
+        <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <span class="font-editorial font-black text-2xl uppercase tracking-tighter text-on-surface">AttendSync</span>
+          <div class="flex items-center gap-2 px-2 py-1 bg-secondary-container/30 rounded-full border border-secondary-container/20">
+            <span class="font-label text-[10px] uppercase tracking-widest text-on-secondary-container">Documentation</span>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="flex items-center gap-2 text-sm font-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+            Back to App
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-[1000px] mx-auto px-6 md:px-8 py-16 md:py-24 anim-fade-up">
+      <div class="space-y-12">
+        <div class="space-y-4">
+          <h1 class="font-editorial font-extrabold text-5xl md:text-6xl tracking-tighter text-on-surface leading-none">System Documentation</h1>
+          <p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+            A comprehensive guide to utilizing AttendSync Ledger for WhatsApp attendance parsing and processing.
+          </p>
+        </div>
+
+        <section class="space-y-6">
+          <h2 class="font-editorial font-bold text-3xl text-on-surface border-b border-outline-variant/20 pb-4">Overview</h2>
+          <p class="font-body text-on-surface-variant leading-relaxed">
+            AttendSync is designed specifically for tracking student attendance via WhatsApp group chats. The system uses a predefined roster for I CSE (Cyber Security) by default, parsing the unstructured chat logs and mapping them against known student profiles automatically.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="font-editorial font-bold text-3xl text-on-surface border-b border-outline-variant/20 pb-4">How it Works</h2>
+          <div class="space-y-4 font-body text-on-surface-variant leading-relaxed">
+            <ol class="list-decimal pl-5 space-y-4">
+              <li><strong>Extract WhatsApp Chat:</strong> Export your class WhatsApp group chat (without media) focusing on the particular attendance session.</li>
+              <li><strong>Import Data:</strong> Paste the text snippet into the Dashboard's Import box.</li>
+              <li><strong>Choose Custom Roster (Optional):</strong> If you are evaluating a class other than I CSE (Cyber Security), supply a custom roster format (Text/CSV mapping ID and Name).</li>
+              <li><strong>Run Verification:</strong> The algorithm tokenizes phone numbers, partial names, and IDs, outputting a reconciliation dashboard.</li>
+              <li><strong>Manual Adjustments:</strong> Inside the Verification Canvas, mark any unparsed students or false negatives manually.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="font-editorial font-bold text-3xl text-on-surface border-b border-outline-variant/20 pb-4">Supported Chat Formats</h2>
+          <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/30 font-mono text-sm text-on-surface-variant">
+            <p>[25/03/26, 9:02 AM] Priya Patel: Present</p>
+            <p>[25/03/26, 9:04 AM] +91 98765 43210: Done</p>
+            <p>[25/03/26, 9:06 AM] Rahul Mehta: Submitted</p>
+          </div>
+          <p class="font-body text-sm text-outline mt-2">
+            * The parser uses fuzzy text classification, supporting common terms such as "present", "here", "done", "submitted".
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-background border-t border-on-surface/5 w-full py-10 mt-20">
+      <div class="flex flex-col items-center justify-center gap-4 w-full">
+        <div class="flex gap-6 md:gap-8">
+          <a class="font-mono text-[10px] uppercase tracking-widest text-on-surface/60 hover:text-on-surface transition-colors" href="documentation.html">Documentation</a>
+          <a class="font-mono text-[10px] uppercase tracking-widest text-on-surface/60 hover:text-on-surface transition-colors" href="privacy.html">Privacy</a>
+          <a class="font-mono text-[10px] uppercase tracking-widest text-on-surface/60 hover:text-on-surface transition-colors" href="#">Support</a>
+        </div>
+        <p class="font-mono text-[10px] uppercase tracking-widest text-on-surface/40">
+          © 2026 AttendSync Ledger • Sai Ram Institute of Technology
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
