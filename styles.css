@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --co-outline-variant: 200 197 203;
   --co-surface-tint: 64 89 170;

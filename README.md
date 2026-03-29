@@ -49,13 +49,16 @@ AttendSync lets you **paste an exported WhatsApp group chat** and automatically 
 git clone https://github.com/ys077/whatsapp-attendance-checker.git
 cd whatsapp-attendance-checker
 
-# Start the server
-npm start
+# Install dependencies (TailwindCSS)
+npm install
+
+# Start the development server (compiles CSS and runs local server)
+npm run dev
 ```
 
 Open your browser at **http://localhost:3000**
 
-> No `npm install` needed — the server uses only Node.js built-in modules (`http`, `fs`, `path`).
+> Note: The project builds Tailwind CSS locally for robust offline support. Uses a lightweight Node.js server.
 
 ---
 
@@ -89,13 +92,17 @@ Manusri M V
 
 ```
 whatsapp-attendance-checker/
-├── index.html      # Main UI — Dashboard, Roster & Analytics tabs
-├── styles.css      # Custom CSS (M3 color tokens, animations, scrollbar)
-├── app.js          # Core application logic (minified variant)
-├── script.js       # Core application logic (formatted variant)
-├── server.js       # Lightweight Node.js static file server
-├── package.json    # npm metadata & start script
-└── README.md       # You are here
+├── index.html         # Main UI — Dashboard, Roster & Analytics tabs
+├── documentation.html # System Documentation
+├── privacy.html       # Privacy Policy
+├── tailwind.config.js # Tailwind CSS configuration
+├── styles.css         # Custom CSS & Tailwind directives
+├── output.css         # Compiled Tailwind stylesheet
+├── app.js             # Core application logic (minified variant)
+├── script.js          # Core application logic (formatted variant)
+├── server.js          # Lightweight Node.js static file server
+├── package.json       # npm metadata & build scripts
+└── README.md          # You are here
 ```
 
 ---
@@ -103,7 +110,7 @@ whatsapp-attendance-checker/
 ## 🛠️ Tech Stack
 
 - **Frontend:** Vanilla HTML, CSS, JavaScript
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (CDN) + custom CSS variables (Material Design 3 color system)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Local Build) + custom CSS variables (Material Design 3 color system)
 - **Icons:** [Material Symbols](https://fonts.google.com/icons)
 - **Fonts:** Bricolage Grotesque, Plus Jakarta Sans, JetBrains Mono, Epilogue, Space Grotesk
 - **Server:** Node.js built-in `http` module (zero dependencies)
